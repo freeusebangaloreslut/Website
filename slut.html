@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE REVEAL | Official Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;500;800&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --hot-pink: #ff006e;
+            --deep-pink: #8338ec;
+            --soft-pink: #ff85a1;
+        }
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        .ultra-bold { font-family: 'Unbounded', sans-serif; }
+
+        /* Cinematic Text Gradient */
+        .text-gradient {
+            background: linear-gradient(to right, #ff006e, #ff85a1, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Lusty Glow Effects */
+        .pink-glow {
+            box-shadow: 0 0 50px rgba(255, 0, 110, 0.3);
+        }
+        
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 0, 110, 0.2);
+        }
+
+        /* Parallax & Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-container {
+            perspective: 1000px;
+        }
+
+        /* Image Seductively Scaling */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom-container img {
+            transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Custom Scrollbar for Chrome/Safari */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #ff006e; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 glass-nav flex justify-between items-center">
+        <div class="ultra-bold text-xl tracking-tighter">
+            <span class="text-[#ff006e]">LUXE</span>.ARCHIVE
+        </div>
+        <div class="hidden md:flex gap-8 text-[10px] uppercase font-bold tracking-[0.3em]">
+            <a href="#hero" class="hover:text-[#ff006e] transition">Entrance</a>
+            <a href="#expose" class="hover:text-[#ff006e] transition">The Body</a>
+            <a href="#gallery" class="hover:text-[#ff006e] transition">Visuals</a>
+            <a href="#contact" class="hover:text-[#ff006e] transition">Connect</a>
+        </div>
+        <button class="bg-[#ff006e] p-2 rounded-full pink-glow">
+            <i data-lucide="heart" class="w-4 h-4 fill-white"></i>
+        </button>
+    </nav>
+
+    <!-- Section 1: THE ENTRANCE (img-01) -->
+    <section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="img-01.jpg" alt="Hero Image" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4">
+            <h4 class="text-[#ff006e] ultra-bold text-xs md:text-sm uppercase tracking-[0.8em] mb-4 reveal">Unapologetic & Raw</h4>
+            <h1 class="text-6xl md:text-9xl serif italic font-black leading-none reveal" style="transition-delay: 200ms;">
+                The <span class="text-gradient">Presence</span>
+            </h1>
+            <p class="max-w-xl mx-auto mt-8 text-gray-300 font-light leading-relaxed reveal" style="transition-delay: 400ms;">
+                Step into the intimate world of a modern icon. A journey of skin, soul, and cinematic brilliance.
+            </p>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="text-[#ff006e]"></i>
+        </div>
+    </section>
+
+    <!-- Section 2: THE EXPOSURE (img-02 & img-03) -->
+    <section id="expose" class="py-32 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="reveal img-zoom-container pink-glow border border-[#ff006e]/20">
+                    <img src="img-02.jpg" alt="Exposing 1" class="w-full grayscale hover:grayscale-0">
+                </div>
+                <div class="reveal" style="transition-delay: 300ms;">
+                    <h2 class="text-5xl md:text-7xl ultra-bold mb-8 leading-none">THE <br><span class="text-[#ff006e]">SENSATION.</span></h2>
+                    <p class="text-xl text-gray-400 font-light mb-8 italic">"Beauty is not a look, it is an appetite."</p>
+                    <div class="h-[2px] w-24 bg-[#ff006e] mb-8"></div>
+                    <p class="text-gray-500 leading-loose">
+                        Capturing the raw essence of human form and celebrity influence. This collection is a visual manifesto of confidence and allure, designed to be seen, felt, and remembered.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mirrored Layout for img-03 -->
+            <div class="grid md:grid-cols-2 gap-20 items-center mt-40">
+                <div class="order-2 md:order-1 reveal">
+                    <h3 class="text-4xl serif italic mb-6">"Every gaze is a conversation."</h3>
+                    <p class="text-gray-400 mb-8">Unveiling the layers behind the camera. From the strobe lights of the runway to the quiet intimacy of the studio.</p>
+                    <a href="#" class="inline-block border-b-2 border-[#ff006e] pb-2 text-xs ultra-bold tracking-widest hover:text-[#ff006e] transition">THE FULL STORY</a>
+                </div>
+                <div class="order-1 md:order-2 reveal img-zoom-container">
+                    <img src="img-03.jpg" alt="Exposing 2" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: THE VOYEUR (Gallery img-04 & img-05) -->
+    <section id="gallery" class="py-20">
+        <div class="text-center mb-20">
+            <h2 class="text-xs ultra-bold text-[#ff006e] tracking-[1em] uppercase mb-4">The Collection</h2>
+            <p class="text-4xl md:text-6xl serif italic">Visual Ecstasy</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 px-4 h-[800px]">
+            <div class="flex-1 img-zoom-container reveal">
+                <img src="img-04.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0">
+            </div>
+            <div class="flex-[1.5] img-zoom-container reveal" style="transition-delay: 200ms;">
+                <img src="img-05.jpg" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: THE CONNECTION -->
+    <section id="contact" class="py-40 bg-gradient-to-b from-[#050505] to-[#1a000e]">
+        <div class="max-w-4xl mx-auto text-center px-6 reveal">
+            <h2 class="text-6xl md:text-8xl ultra-bold text-white mb-10 tracking-tighter">BECOME <br><span class="text-[#ff006e]">OBSESSED.</span></h2>
+            <p class="text-gray-400 mb-12 uppercase tracking-widest text-sm">Join the inner circle for exclusive visual drops</p>
+            
+            <form class="relative max-w-md mx-auto">
+                <input type="email" placeholder="Your Email Address" class="w-full bg-white/5 border-b-2 border-[#ff006e] py-4 px-4 outline-none focus:bg-white/10 transition-all text-center">
+                <button class="mt-8 bg-[#ff006e] text-white px-10 py-4 ultra-bold text-[10px] tracking-widest hover:scale-110 transition-transform">
+                    SUBSCRIBE TO REVELATIONS
+                </button>
+            </form>
+
+            <div class="mt-24 flex justify-center gap-12">
+                <a href="#" class="text-white hover:text-[#ff006e] transition"><i data-lucide="instagram"></i></a>
+                <a href="#" class="text-white hover:text-[#ff006e] transition"><i data-lucide="twitter"></i></a>
+                <a href="#" class="text-white hover:text-[#ff006e] transition"><i data-lucide="camera"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-[10px] text-gray-600 tracking-[0.5em] uppercase">© 2024 Archive of Desire. Powered by Elegance.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Scroll Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
